@@ -1,0 +1,7 @@
+.cache/
+libft
+libft/
+*.o
+*.mk
+*.compdb.json
+compile_commands.json
