@@ -11,6 +11,7 @@ TESTS_DIR = tests
 MANDATORY = isalpha \
 			isdigit \
 			isalnum \
+			isascii \
 
 MANDATORY_OBJ = $(MANDATORY:%=$(TESTS_DIR)/ft_%.o)
 
