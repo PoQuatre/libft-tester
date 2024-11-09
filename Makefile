@@ -13,6 +13,8 @@ MANDATORY = isalpha \
 			isalnum \
 			isascii \
 			isprint \
+			\
+			strlen \
 
 MANDATORY_OBJ = $(MANDATORY:%=$(TESTS_DIR)/ft_%.o)
 
