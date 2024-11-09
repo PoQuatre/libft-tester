@@ -9,6 +9,7 @@ OBJ = $(SRC:%.c=%.o)
 TESTS_DIR = tests
 
 MANDATORY = isalpha \
+			isdigit \
 
 MANDATORY_OBJ = $(MANDATORY:%=$(TESTS_DIR)/ft_%.o)
 
