@@ -17,6 +17,7 @@ MANDATORY = isalpha \
 			strlen \
 			strlcpy \
 			strlcat \
+			strchr \
 
 MANDATORY_OBJ = $(MANDATORY:%=$(TESTS_DIR)/ft_%.o)
 
