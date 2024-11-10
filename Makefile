@@ -19,6 +19,7 @@ MANDATORY = isalpha \
 			strlcat \
 			strchr \
 			strrchr \
+			strncmp \
 			strdup \
 			\
 			memset \
