@@ -16,12 +16,13 @@ MANDATORY = isalpha \
 			\
 			strlen \
 			strlcpy \
+			strlcat \
 
 MANDATORY_OBJ = $(MANDATORY:%=$(TESTS_DIR)/ft_%.o)
 
 BONUS = lstnew \
 
-BONUS_OBJ = $(BONUS:%=$(TESTS_DIR)/ft_%_bonus.o)
+BONUS_OBJ = $(BONUS:%=$(TESTS_DIR)/ft_%.o)
 
 INC = include $(LIBFT_PATH)
 
@@ -66,7 +67,7 @@ bonus:
 	$(MAKE) --no-print-directory $(BONUS)
 
 .PHONY: $(BONUS)
-$(BONUS): %: $(TESTS_DIR)/ft_%_bonus.o $(OBJ) .libft_bonus
+$(BONUS): %: $(TESTS_DIR)/ft_%.o $(OBJ) .libft_bonus
 	@$(CC) -o $@ $(filter-out .libft_bonus,$^) $(LDFLAGS) $(LDLIBS) >/dev/null 2>&1; \
 	if [ $$? -eq 0 ]; then \
 		printf "\033[2;97mft_$@:\033[0m"; \
