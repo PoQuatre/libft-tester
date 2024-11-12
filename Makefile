@@ -22,6 +22,7 @@ MANDATORY = isalpha \
 			\
 			memset \
 			memcpy \
+			memmove \
 
 MANDATORY_OBJ = $(MANDATORY:%=$(TESTS_DIR)/ft_%.o)
 
