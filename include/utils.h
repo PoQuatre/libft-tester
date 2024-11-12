@@ -6,7 +6,7 @@
 /*   By: mle-flem <mle-flem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 23:04:26 by mle-flem          #+#    #+#             */
-/*   Updated: 2024/11/09 03:54:45 by mle-flem         ###   ########.fr       */
+/*   Updated: 2024/11/12 02:27:41 by mle-flem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define UTILS_H
 
 # include <stdbool.h>
+# include <stddef.h>
 
 # define CLR_RESET "\x1b[0m"
 # define CLR_SEGV "\x1b[0m"
@@ -22,5 +23,6 @@
 
 void	handle_segv(int sig);
 void	check(bool ok);
+void	mcheck(void *ptr, size_t target_size);
 
 #endif
