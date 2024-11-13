@@ -6,7 +6,7 @@
 /*   By: mle-flem <mle-flem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 03:42:50 by mle-flem          #+#    #+#             */
-/*   Updated: 2024/11/13 05:25:58 by mle-flem         ###   ########.fr       */
+/*   Updated: 2024/11/13 19:12:43 by mle-flem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,21 @@ int	main(void)
 
 	ptr = ft_calloc(-5, -5);
 	/* 9 */ check(!ptr);
+	free(ptr);
+
+	ptr = ft_calloc(0, -5);
+	/* 10 */ check(ptr);
+	free(ptr);
+
+	ptr = ft_calloc(-5, 0);
+	/* 11 */ check(ptr);
+	free(ptr);
+
+	ptr = ft_calloc(3, -5);
+	/* 12 */ check(!ptr);
+	free(ptr);
+
+	ptr = ft_calloc(-5, 3);
+	/* 13 */ check(!ptr);
 	free(ptr);
 }
