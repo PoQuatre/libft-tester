@@ -13,6 +13,8 @@ MANDATORY = isalpha \
 			isalnum \
 			isascii \
 			isprint \
+			toupper \
+			tolower \
 			\
 			strlen \
 			strlcpy \
