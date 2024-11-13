@@ -23,6 +23,7 @@ MANDATORY = isalpha \
 			strnstr \
 			strdup \
 			\
+			bzero \
 			memset \
 			memcpy \
 			memmove \
