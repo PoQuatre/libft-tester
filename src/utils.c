@@ -6,11 +6,12 @@
 /*   By: mle-flem <mle-flem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 23:08:13 by mle-flem          #+#    #+#             */
-/*   Updated: 2024/11/14 08:37:13 by mle-flem         ###   ########.fr       */
+/*   Updated: 2024/11/14 17:04:18 by mle-flem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <malloc.h>
 
 #include "utils.h"
@@ -20,6 +21,8 @@ static int g_test_id = 1;
 void	handle_segv(int sig)
 {
 	(void) sig;
+	printf(" %s[%d.SEGV]", CLR_SEGV, g_test_id++);
+	exit(1);
 }
 
 void	check(bool ok)
