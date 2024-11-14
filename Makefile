@@ -37,6 +37,7 @@ MANDATORY = isalpha \
 			memcmp \
 			\
 			atoi \
+			itoa \
 			calloc \
 
 MANDATORY_OBJ = $(MANDATORY:%=$(TESTS_DIR)/ft_%.o)
