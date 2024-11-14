@@ -38,6 +38,8 @@ MANDATORY = isalpha \
 			memchr \
 			memcmp \
 			\
+			putchar_fd \
+			\
 			atoi \
 			itoa \
 			calloc \
