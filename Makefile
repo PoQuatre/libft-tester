@@ -41,6 +41,7 @@ MANDATORY = isalpha \
 			putchar_fd \
 			putstr_fd \
 			putendl_fd \
+			putnbr_fd \
 			\
 			atoi \
 			itoa \
