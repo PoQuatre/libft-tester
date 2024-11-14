@@ -45,6 +45,10 @@ BONUS = lstnew \
 
 BONUS_OBJ = $(BONUS:%=$(TESTS_DIR)/ft_%.o)
 
+CUSTOM = isinset \
+
+CUSTOM_OBJ = $(CUSTOM:%=$(TESTS_DIR)/ft_%.o)
+
 INC = include $(LIBFT_PATH)
 
 CFLAGS += -Wall -Wextra -Werror $(INC:%=-I%)
@@ -52,7 +56,7 @@ CFLAGS += -Wall -Wextra -Werror $(INC:%=-I%)
 LDFLAGS = -L$(LIBFT_PATH)
 LDLIBS = -lft
 
-DEP = $(SRC:%.c=%.mk) $(MANDATORY_OBJ:%.o=%.mk) $(BONUS_OBJ:%.o=%.mk)
+DEP = $(SRC:%.c=%.mk) $(MANDATORY_OBJ:%.o=%.mk) $(BONUS_OBJ:%.o=%.mk) $(CUSTOM_OBJ:%.o=%.mk)
 COMPDB = $(DEP:%.mk=%.compdb.json)
 
 CC ?= cc
@@ -102,6 +106,24 @@ $(BONUS): %: $(TESTS_DIR)/ft_%.o $(OBJ) .libft_bonus
 .PHONY: .libft_bonus
 .libft_bonus:
 	@$(MAKE) --no-print-directory -C $(LIBFT_PATH) bonus
+
+
+.PHONY: custom
+custom:
+	@printf '\033[1;95m[ CUSTOM ]\033[0m\n'; \
+	$(MAKE) --no-print-directory $(CUSTOM)
+
+.PHONY: $(CUSTOM)
+$(CUSTOM): %: $(TESTS_DIR)/ft_%.o $(OBJ) .libft_mandatory
+	@$(CC) -o $@ $(filter-out .libft_mandatory,$^) $(LDFLAGS) $(LDLIBS) >/dev/null 2>&1; \
+	if [ $$? -eq 0 ]; then \
+		printf "\033[2;97mft_$@:\033[0m"; \
+		./$@; \
+		printf "\033[0m\n"; \
+		$(RM) $@; \
+	else \
+		printf "\033[2;97mft_$@: \033[0;1;91m[DOES NOT COMPILE]\033[0m\n"; \
+	fi
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $<
