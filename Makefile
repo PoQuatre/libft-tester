@@ -52,6 +52,7 @@ MANDATORY_OBJ = $(MANDATORY:%=$(TESTS_DIR)/ft_%.o)
 BONUS = lstnew \
 		lstadd_front \
 		lstsize \
+		lstlast \
 
 BONUS_OBJ = $(BONUS:%=$(TESTS_DIR)/ft_%.o)
 
