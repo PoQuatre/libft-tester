@@ -39,6 +39,7 @@ MANDATORY = isalpha \
 			memcmp \
 			\
 			putchar_fd \
+			putstr_fd \
 			\
 			atoi \
 			itoa \
