@@ -25,6 +25,7 @@ MANDATORY = isalpha \
 			strnstr \
 			strdup \
 			substr \
+			strjoin \
 			\
 			bzero \
 			memset \
