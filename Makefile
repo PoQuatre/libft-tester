@@ -47,6 +47,7 @@ BONUS_OBJ = $(BONUS:%=$(TESTS_DIR)/ft_%.o)
 
 CUSTOM = isinset \
 		 isspace \
+		 strrev \
 
 CUSTOM_OBJ = $(CUSTOM:%=$(TESTS_DIR)/ft_%.o)
 
