@@ -29,6 +29,7 @@ MANDATORY = isalpha \
 			strtrim \
 			split \
 			strmapi \
+			striteri \
 			\
 			bzero \
 			memset \
