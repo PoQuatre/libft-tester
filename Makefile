@@ -57,6 +57,7 @@ BONUS = lstnew \
 		lstdelone \
 		lstclear \
 		lstiter \
+		lstmap \
 
 BONUS_OBJ = $(BONUS:%=$(TESTS_DIR)/ft_%.o)
 
