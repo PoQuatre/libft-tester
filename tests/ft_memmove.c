@@ -6,7 +6,7 @@
 /*   By: mle-flem <mle-flem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 13:45:20 by mle-flem          #+#    #+#             */
-/*   Updated: 2024/11/12 13:59:37 by mle-flem         ###   ########.fr       */
+/*   Updated: 2024/11/16 07:41:23 by mle-flem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ int	main(void)
 	/* 2 */ check(ft_memmove(buf, buf + 2, 0) == buf && !memcmp(buf, s1, 8));
 
 	memcpy(buf, s1, 8);
-	/* 2 */ check(ft_memmove(buf, buf + 2, 2) == buf && !memcmp(buf, s2, 8));
+	/* 3 */ check(ft_memmove(buf, buf + 2, 2) == buf && !memcmp(buf, s2, 8));
 
 	memcpy(buf, s2, 8);
-	/* 2 */ check(ft_memmove(buf + 1, buf, 2) == buf + 1 && !memcmp(buf, s3, 8));
+	/* 4 */ check(ft_memmove(buf + 1, buf, 2) == buf + 1 && !memcmp(buf, s3, 8));
+
+	/* 5 */ check(!ft_memmove(NULL, NULL, 3));
 }
