@@ -6,7 +6,7 @@
 /*   By: mle-flem <mle-flem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 22:37:07 by mle-flem          #+#    #+#             */
-/*   Updated: 2024/11/10 23:29:40 by mle-flem         ###   ########.fr       */
+/*   Updated: 2024/11/16 01:56:04 by mle-flem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ int	main(void)
 	/* 14 */ check(ft_strncmp("", "1", 1) < 0);
 	/* 15 */ check(ft_strncmp("1", "", 1) > 0);
 	/* 16 */ check(ft_strncmp("", "", 1) == 0);
+	/* 16 */ check(ft_strncmp("test\x80", "test", -1) > 0);
 }
