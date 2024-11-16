@@ -6,7 +6,7 @@
 /*   By: mle-flem <mle-flem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 22:43:32 by mle-flem          #+#    #+#             */
-/*   Updated: 2024/11/14 22:58:32 by mle-flem         ###   ########.fr       */
+/*   Updated: 2024/11/16 09:30:04 by mle-flem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 void	free_list(t_list *l)
 {
 	if (l)
-		free(l->next);
+		free_list(l->next);
 	free(l);
 }
 
