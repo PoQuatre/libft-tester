@@ -80,7 +80,7 @@ COMPDB = $(DEP:%.mk=%.compdb.json)
 CC ?= cc
 RM ?= rm -f
 
-ifneq ($(shell which valgrind >/dev/null 2>&1),)
+ifneq ($(shell which valgrind 2>/dev/null),)
 	VALGRIND = valgrind -q --leak-check=full
 endif
 
