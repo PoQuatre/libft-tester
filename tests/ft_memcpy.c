@@ -6,7 +6,7 @@
 /*   By: mle-flem <mle-flem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 02:59:30 by mle-flem          #+#    #+#             */
-/*   Updated: 2024/11/12 13:40:03 by mle-flem         ###   ########.fr       */
+/*   Updated: 2024/11/16 07:38:32 by mle-flem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,6 @@ int	main(void)
 	while (c < 100 && dst[c] == 'B') c++;
 
 	/* 3 */ check(c == 21 && dst[42] == 'A' && ret == dst);
+
+	/* 4 */ check(!ft_memcpy(NULL, NULL, 3));
 }
