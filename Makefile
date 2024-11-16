@@ -69,7 +69,7 @@ CUSTOM_OBJ = $(CUSTOM:%=$(TESTS_DIR)/ft_%.o)
 
 INC = include $(LIBFT_PATH)
 
-CFLAGS += -Wall -Wextra -Werror $(INC:%=-I%)
+CFLAGS += -g -Wall -Wextra -Werror $(INC:%=-I%)
 
 LDFLAGS = -L$(LIBFT_PATH)
 LDLIBS = -lft
@@ -79,6 +79,10 @@ COMPDB = $(DEP:%.mk=%.compdb.json)
 
 CC ?= cc
 RM ?= rm -f
+
+ifneq ($(shell which valgrind >/dev/null 2>&1),)
+	VALGRIND = valgrind -q --leak-check=full
+endif
 
 .PHONY: all
 all: mandatory bonus
@@ -93,7 +97,7 @@ $(MANDATORY): %: $(TESTS_DIR)/ft_%.o $(OBJ) .libft_mandatory
 	@$(CC) -o $@ $(filter-out .libft_mandatory,$^) $(LDFLAGS) $(LDLIBS) >/dev/null 2>&1; \
 	if [ $$? -eq 0 ]; then \
 		printf "\033[2;97mft_$@:\033[0m"; \
-		./$@; \
+		$(VALGRIND) ./$@; \
 		printf "\033[0m\n"; \
 		$(RM) $@; \
 	else \
@@ -114,7 +118,7 @@ $(BONUS): %: $(TESTS_DIR)/ft_%.o $(OBJ) .libft_bonus
 	@$(CC) -o $@ $(filter-out .libft_bonus,$^) $(LDFLAGS) $(LDLIBS) >/dev/null 2>&1; \
 	if [ $$? -eq 0 ]; then \
 		printf "\033[2;97mft_$@:\033[0m"; \
-		./$@; \
+		$(VALGRIND) ./$@; \
 		printf "\033[0m\n"; \
 		$(RM) $@; \
 	else \
@@ -136,7 +140,7 @@ $(CUSTOM): %: $(TESTS_DIR)/ft_%.o $(OBJ) .libft_mandatory
 	@$(CC) -o $@ $(filter-out .libft_mandatory,$^) $(LDFLAGS) $(LDLIBS) >/dev/null 2>&1; \
 	if [ $$? -eq 0 ]; then \
 		printf "\033[2;97mft_$@:\033[0m"; \
-		./$@; \
+		$(VALGRIND) ./$@; \
 		printf "\033[0m\n"; \
 		$(RM) $@; \
 	else \
